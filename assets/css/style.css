@@ -1,0 +1,119 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
+}
+#main-wrapper {
+    height:100vh;
+    /*background-color: red;*/
+    position: relative;
+}
+#inner-wrapper {
+    /*height:100vh;*/
+    width:100%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background-color: #FCFDFF;
+    padding-top:60px;
+}
+#coin-wrapper {
+    /*background-color: lightgrey;*/
+    position: relative;
+    margin-bottom:30px;
+}
+#static-coin {
+    margin-top:60px;
+}
+
+#flipping-coin, #coin {
+    margin-top:60px;
+}
+
+#stats-main-wrapper {
+    /*background-color: slategrey;*/
+}
+.stats-wrapper {
+    position: relative;
+    width:33%;
+}
+.stats-divider-right {
+    width:2px;
+    background-color: #C6C9D0;
+    position: absolute;
+    top:25px;
+    right:0;
+    display: inline-block;
+}
+.stats-divider-left {
+    width:2px;
+    background-color: #C6C9D0;
+    position: absolute;
+    top:25px;
+    left:0;
+    display: inline-block;
+}
+#main-button-wrapper {
+    /*background-color: #fff;*/
+    clear: both;
+}
+#button {
+    background-color: #ED528B;
+    width: 300px;
+    height:45px;
+    border:0;
+    border-radius: 30px;
+    box-shadow: 0px 8px #f1f1f1;
+}
+#reset-button-wrapper {
+    /*background-color: blue;*/
+}
+#reset-btn {
+    background-color: #6490CB;
+    width: 80px;
+    height:45px;
+    border:0;
+    border-radius: 30px;
+    margin-left:22px;
+    padding-bottom:10px;
+    box-shadow: 0px 8px #f1f1f1;
+}
+.stats-num {
+    color: #ED528B;
+}
+.stats-text {
+    color: #C6C9D0;
+}
+#flipping-coin{
+    display:none;
+    -webkit-animation: anim .5s infinite linear;
+    animation: anim .5s infinite linear;
+}
+@-webkit-keyframes anim {
+    from {-webkit-transform: rotateX(0deg);}
+    to {-webkit-transform: rotateX(360deg);}
+}
+@keyframes anim {
+    from {transform: rotateX(0deg);}
+    to {transform: rotateX(360deg);}
+}
+@media only screen and (max-width: 600px) {
+    #inner-wrapper {
+        height:100vh;
+        width:100%;
+        /*position: absolute;*/
+        /*top:50%;*/
+        /*left:50%;*/
+        /*transform: translate(-50%, -50%);*/
+        background-color: #FCFDFF;
+    }
+}
+
+
+
+
+
+
+
+
