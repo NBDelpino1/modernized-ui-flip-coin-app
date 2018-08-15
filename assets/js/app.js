@@ -68,20 +68,3 @@ function restart(){
     document.location.href = "";
     sound2.play();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
