@@ -1,126 +1,120 @@
+/* Colors:
+Dark Blue - #2e4461
+Medium Blue - #6490CB
+Light Blue - #C6C9D0
+Pink - #ED528B
+*/
+
 body {
     font-family: 'Montserrat', sans-serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizelegibility;
+    letter-spacing:1px;
 }
-#main-wrapper {
+
+.outter-wrapper {
     height:100vh;
-    /*background-color: red;*/
     position: relative;
 }
-#inner-wrapper {
-    /*height:100vh;*/
+
+.inner-wrapper {
     width:100%;
     position: absolute;
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
-    /*background-color: #FCFDFF;*/
     background-color: #2e4461;
-    padding-top:60px;
+    padding:20px;
     border-radius: 15px;
 }
-#coin-wrapper {
-    /*background-color: lightgrey;*/
+
+.coin-section{
     position: relative;
     margin-bottom:30px;
 }
-.coin-image {
-    /*box-shadow: 0px 8px #40689e5c;*/
-    box-shadow:  0px 8px rgb(60, 60, 60);;
+
+.coin-section__coin-image {
+    padding-top:60px;
     border-radius: 100px;
-}
-#static-coin {
-    margin-top:60px;
+    box-shadow:  0px 5px rgb(60, 60, 60);;
 }
 
-#flipping-coin, #coin {
-    margin-top:60px;
-}
-
-#stats-main-wrapper {
-    /*background-color: slategrey;*/
-}
-.stats-wrapper {
-    position: relative;
-    width:33%;
-}
-.stats-divider-right {
-    width:2px;
-    background-color: #C6C9D0;
-    position: absolute;
-    top:25px;
-    right:0;
-    display: inline-block;
-}
-.stats-divider-left {
-    width:2px;
-    background-color: #C6C9D0;
-    position: absolute;
-    top:25px;
-    left:0;
-    display: inline-block;
-}
-#main-button-wrapper {
-    /*background-color: #fff;*/
-    clear: both;
-}
-#button {
-    background-color: #ED528B;
-    width: 300px;
-    height:45px;
-    border:0;
-    border-radius: 30px;
-    box-shadow: 0px 8px rgba(237, 82, 139, 0.75);
-}
-#reset-button-wrapper {
-    /*background-color: blue;*/
-}
-#reset-btn {
-    background-color: #6490CB;
-    width: 80px;
-    height:45px;
-    border:0;
-    border-radius: 30px;
-    margin-left:22px;
-    padding-bottom:10px;
-    box-shadow: 0px 8px rgba(100, 144, 203, 0.76);
-}
-.stats-num {
-    color: #ED528B;
-}
-.stats-text {
-    color: #C6C9D0;
-}
 #flipping-coin{
     display:none;
     -webkit-animation: anim .5s infinite linear;
     backface-visibility: visible !important;
     animation: anim .5s infinite linear;
 }
-@-webkit-keyframes anim {
-    from {-webkit-transform: rotateX(0deg);}
-    to {-webkit-transform: rotateX(360deg);}
+
+.stat-section__container {
+    position: relative;
+    width:33%;
 }
-@keyframes anim {
-    from {transform: rotateX(0deg);}
-    to {transform: rotateX(360deg);}
+
+.stat-section__num {
+    color: #ED528B;
 }
+
+.stat-section__text {
+    color: #C6C9D0;
+}
+
+.stat-section__right-divider {
+    position: absolute;
+    top:50%;
+    right:0;
+    transform: translate(-50%, -50%);
+    width:2px;
+    background-color: #C6C9D0;
+}
+
+.stat-section__left-divider {
+    position: absolute;
+    top:50%;
+    left:0;
+    transform: translate(-50%, -50%);
+    width:2px;
+    background-color: #C6C9D0;
+}
+
+.btn {
+    border-radius: 100px;
+    color: #fff;
+}
+
+#btn-main {
+    background-color: #ED528B;
+    box-shadow: 0px 5px rgba(237, 82, 139, 0.75);
+    width: 300px;
+    height:45px;
+}
+
+#btn-reset {
+    background-color: #6490CB;
+    box-shadow: 0px 5px rgba(100, 144, 203, 0.76);
+    width: 80px;
+    height:45px;
+}
+
+/* Media Queries */
+
 @media only screen and (max-width: 600px) {
-    #inner-wrapper {
+    .inner-wrapper {
         height:100vh;
         width:100%;
         border-radius: 0;
     }
 }
 
-/* Pop */
-@-webkit-keyframes hvr-pop {
-    50% {
-        -webkit-transform: scale(1.2);
-        transform: scale(1.2);
-    }
+/* Flipping Coin Animation */
+
+@keyframes anim {
+    from {transform: rotateX(0deg);}
+    to {transform: rotateX(360deg);}
 }
+
+/* Button Pop Animation */
+
 @keyframes hvr-pop {
     50% {
         -webkit-transform: scale(1.2);
@@ -130,17 +124,12 @@ body {
 .hvr-pop {
     display: inline-block;
     vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 }
 .hvr-pop:hover, .hvr-pop:focus, .hvr-pop:active {
-    -webkit-animation-name: hvr-pop;
     animation-name: hvr-pop;
-    -webkit-animation-duration: 0.3s;
     animation-duration: 0.3s;
-    -webkit-animation-timing-function: linear;
     animation-timing-function: linear;
-    -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
 }

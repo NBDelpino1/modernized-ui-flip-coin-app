@@ -13,46 +13,44 @@
     <title>Modernized Coin Flip App</title>
 </head>
 <body>
-<div class="container" id="main-wrapper">
-    <div id="inner-wrapper" class="shadow">
-        <div class="h-50 text-center" id="coin-wrapper">
-            <img src="assets/images/heads.png" id="static-coin" class="coin-image">
-            <img src="assets/images/heads.png" id="flipping-coin" class="coin-image">
-            <img src="" id="coin" class="coin-image">
-        </div>
-        <div class="d-flex justify-content-center" id="stats-main-wrapper">
-            <div class="text-center stats-wrapper">
-                <h1 class="stats-num" id="heads">0</h1>
-                <h6 class="stats-text">Heads</h6>
+    <div class="outter-wrapper container">
+        <div class="inner-wrapper shadow">
+            <div class="coin-section h-50 text-center">
+                <img src="assets/images/heads.png" class="coin-section__coin-image" id="static-coin">
+                <img src="assets/images/heads.png" class="coin-section__coin-image" id="flipping-coin">
+                <img src="" class="coin-section__coin-image" id="coin">
             </div>
-            <div class="text-center stats-wrapper">
-                <h1 class="stats-num" id="tails">0</h1>
-                <h6 class="stats-text">Tails</h6>
-                <div class="h-50 stats-divider-right"></div>
-                <div class="h-50 stats-divider-left"></div>
+            <div class="stat-section d-flex justify-content-center">
+                <div class="stat-section__container text-center">
+                    <h1 class="stat-section__num" id="heads">0</h1>
+                    <h6 class="stat-section__text">Heads</h6>
+                </div>
+                <div class="stat-section__container text-center">
+                    <h1 class="stat-section__num" id="tails">0</h1>
+                    <h6 class="stat-section__text">Tails</h6>
+                    <div class="h-50 stat-section__right-divider"></div>
+                    <div class="h-50 stat-section__left-divider"></div>
+                </div>
+                <div class="stat-section__container text-center">
+                    <h1 class="stat-section__num" id="total-flips">0</h1>
+                    <h6 class="stat-section__text">Flips</h6>
+                </div>
             </div>
-            <div class="text-center stats-wrapper">
-                <h1 class="stats-num" id="total-flips">0</h1>
-                <h6 class="stats-text">Flips</h6>
+            <div class="button-section text-center p-3">
+                <button type="button" class="btn hvr-pop" id="btn-main" onclick="coinToss()">Flip</button>
             </div>
+            <div class="button-section text-left p-3">
+                <button type="button" class="btn hvr-pop" id="btn-reset" onclick="restart()"><img src="assets/images/restart-icon.png"></button>
+            </div>
+            <!-- Audio -->
+            <audio id="flip">
+                <source src="assets/audio/flip.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="reset">
+                <source src="assets/audio/reset.mp3" type="audio/mpeg">
+            </audio>
         </div>
-        <div class="text-center p-3" id="main-button-wrapper">
-            <button type="button" class="btn btn-secondary hvr-pop" id="button" onclick="coinToss()">Flip</button>
-        </div>
-        <div class="text-left p-3" id="reset-button-wrapper">
-            <button type="button" class="btn btn-secondary hvr-pop" id="reset-btn" onclick="restart()">
-                <img src="assets/images/restart-icon.png">
-            </button>
-        </div>
-        <!-- Audio -->
-        <audio id="flip">
-            <source src="assets/audio/flip.mp3" type="audio/mpeg">
-        </audio>
-        <audio id="reset">
-            <source src="assets/audio/reset.mp3" type="audio/mpeg">
-        </audio>
     </div>
-</div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
